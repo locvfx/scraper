@@ -1,0 +1,4728 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gemvara / Pinterest</title>
+        
+        <link rel="icon" href="http://passets-cdn.pinterest.com/images/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon-precomposed" href="http://passets-cdn.pinterest.com/images/ipad_touch_icon.png" />
+        <link rel="stylesheet" href="http://passets-cdn.pinterest.com/css/pinboard_c7221f03.css" type="text/css" media="all"/>
+        <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="http://passets-cdn.pinterest.com/css/ie7-and-up_6fe9392e.css" type="text/css" media="all" /><![endif]-->
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <script type="text/javascript">if (!window.console) { window.console = {log: function(){}} };</script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://passets-cdn.pinterest.com/js/bundle_pin_8fe4ab96.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        
+<meta property="og:title" content="Gemvara">
+<meta property="og:site_name" content="http://pinterest.com/">
+<meta property="og:image" content="http://media-cdn.pinterest.com/upload/102105116521772546_iG0In6Pc_b.jpg">
+
+    </head>
+    
+<body>
+
+    <div id="Header">
+    <div class="LiquidContainer HeaderContainer">
+        
+<a href="/" id="Pinterest"><img src="http://passets-cdn.pinterest.com/images/LogoRed.png" width="100" height="26" alt="Pinterest Logo" /></a>
+
+
+<ul id="Navigation">
+    
+    <li>
+        <a href="/about/" class="nav">About<span></span></a>
+        <ul>
+            <li><a href="/about/help/">Help</a></li>
+            <li><a href="/about/goodies/">Pin It Button</a></li>
+            <li class="beforeDivider"><a href="/about/copyright/">Copyright</a></li>
+            <li class="divider"><a href="/about/careers/">Careers</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="http://blog.pinterest.com/">Blog</a></li>
+        </ul>
+    </li>
+    
+        <li><a href="/login/?next=%2Fsource%2Fgemvara.com%2F" class="nav LoginNav">Login</a></li>
+    
+</ul>
+
+
+
+    
+    <div id="Search" >
+        <form action="/search/" method="get" class="text">
+            <input type="text" id="query" name="q" size="27" value="Search"/>
+            <a id="query_button" href="#" class="lg"><img src="http://passets-cdn.pinterest.com/images/search.gif" alt="" /></a>
+        </form>
+    </div>
+
+    </div>
+</div>
+
+    <div id="Add" class="ModalContainer">
+
+    <div class="modal wide PaddingLess">
+
+        <div class="header lg">
+            <a href="#" class="close" onclick="Modal.close('Add'); return false"><strong>Close</strong><span></span></a>
+            <h2>Add</h2>
+        </div>
+
+        <p id="PinIt">Pin images from any website as you browse the web with the <a href="/about/goodies/#pinmarklet" onclick="load_url(); return false">&ldquo;Pin It&rdquo; button</a>.</p>
+
+        <div id="OpenLinks">
+
+            <a href="#" id="OpenScrapePin" class="cell" onclick="AddDialog.close('Add', 'ScrapePin'); return false">
+                <div class="icon" id="scrape"></div>
+                <span>Add a Pin</span>
+            </a>
+
+            <a id="OpenUploadPin" class="cell" onclick="AddDialog.close('Add', 'UploadPin'); return false">
+                <div class="icon" id="upload"></div>
+                <span>Upload a Pin</span>
+            </a>
+
+            <a id="OpenCreateBoard" class="cell" onclick="AddDialog.close('Add', 'CreateBoard'); CreateBoardDialog.reset(); return false">
+                <div class="icon" id="board"></div>
+                <span>Create a Board</span>
+            </a>
+
+        </div><!-- #OpenLinks -->
+
+    </div><!-- .modal.wide.PostSetup -->
+
+    <div class="overlay"></div>
+
+</div><!-- #Add.ModalContainer -->
+<div id="Repin" class="ModalContainer">
+
+    <div class="modal wide PostSetup">
+
+        <div class="header lg">
+            <a href="#" class="close" onclick="RepinDialog.reset(); return false"><strong>Close</strong><span></span></a>
+            <h2>Repin</h2>
+        </div>
+
+        <div class="ImagePicker">
+    <img src="http://passets-cdn.pinterest.com/images/load2.gif" class="load" alt="Loading Indicator" />
+    <div class="Images pin">
+        <div class="price"></div>
+        
+        <ul>
+            
+                <li><img src="http://passets-cdn.pinterest.com/images/DefaultPin.gif" alt="Media" /></li>
+            
+        </ul>
+    </div>
+    <div class="Arrows">
+        <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+        <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+    </div>
+</div>
+
+<div class="PinForm">
+
+    <div class="BoardListOverlay"></div>
+    
+<div class="BoardSelector BoardPicker">
+    <div class="current">
+        <span class="CurrentBoard"></span>
+        <span class="DownArrow"></span>
+    </div>
+    <div class="BoardList">
+        <ul>
+            
+        </ul>
+        <div class="CreateBoard">
+            <input type="text" value="Create New Board"/>
+            <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+            <div class="CreateBoardStatus"></div> 
+        </div>
+    </div>
+</div>
+
+    <div class="InputArea">
+        <ul class="Form FancyForm">
+            <li class="noMarginBottom ">
+                <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                <label>Describe your pin&hellip;</label>
+                <span class="fff"></span>
+            </li>
+        </ul>
+        <p class="CharacterHelp">Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong> to add price.</p>
+    </div>
+
+    <div class="CreateBoardStatus error mainerror"></div>
+
+    <div class="Buttons">
+        <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+        <span class="CharacterCount colorless">500</span>
+        
+            
+            
+        
+    </div>
+
+</div>
+
+        <form action="" id="repinform" method="post">
+            <input type="hidden" name="board" id="repin_board" value="" />
+            <input type="hidden" name="id" id="repin_pin_id" />
+            <input type="hidden" name="tags" id="repin_tags" />
+            <input type="hidden" name="replies" id="repin_comment_replies" />
+            <input type="hidden" name="details" id="repin_details" value="" />
+            <input type="hidden" name="buyable" id="repin_currency_holder" />
+            
+                
+                
+            
+            <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='45f237675c31883eb26f78f81734501f' /></div>
+        </form>
+
+    </div><!-- .modal.wide.PostSetup -->
+
+    <div class="modal wide PostSuccess">
+
+        <div class="header lg" style="text-align: left;">
+            <h2><a href="#" class="close" onclick="RepinDialog.reset(); return false"><strong>Close</strong><span></span></a>Repin</h2>
+        </div>
+
+        Repinned to <span><a href="#" class="BoardLink"></a></span>.
+        <br/>Shared with your followers. <a href="#" class="PinLink">See it now</a>.
+
+    </div><!-- .modal.wide.PostSuccess -->
+
+    <div class="overlay"></div>
+
+</div><!-- #Repin.ModalContainer -->
+<div id="ScrapePin" class="ModalContainer">
+
+    <div class="modal wide">
+
+        <div class="header lg">
+            <a href="#" class="close" onclick="AddDialog.childClose('Add','ScrapePin'); return false"><strong>Close</strong><span></span></a>
+            <h2>Add a Pin</h2>
+        </div>
+
+        <div class="PinTop inputHolder scrapePin">
+            <ul class="Form FancyForm">
+                <li>
+                    <img src="http://passets-cdn.pinterest.com/images/load2.gif" class="load" alt="Loading Indicator" />
+                    <a href="#" id="ScrapeButton" class="Button WhiteButton Button18 floatRight"><strong>Find Images</strong><span></span></a>
+                    <input id="ScrapePinInput" type="text"/>
+                    <label>http://</label>
+                    <span class="fff"></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="PinBottom">
+            <div class="ImagePicker">
+    <img src="http://passets-cdn.pinterest.com/images/load2.gif" class="load" alt="Loading Indicator" />
+    <div class="Images pin">
+        <div class="price"></div>
+        
+        <ul>
+            
+                <li><img src="http://passets-cdn.pinterest.com/images/DefaultPin.gif" alt="Media" /></li>
+            
+        </ul>
+    </div>
+    <div class="Arrows">
+        <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+        <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+    </div>
+</div>
+
+<div class="PinForm">
+
+    <div class="BoardListOverlay"></div>
+    
+<div class="BoardSelector BoardPicker">
+    <div class="current">
+        <span class="CurrentBoard"></span>
+        <span class="DownArrow"></span>
+    </div>
+    <div class="BoardList">
+        <ul>
+            
+        </ul>
+        <div class="CreateBoard">
+            <input type="text" value="Create New Board"/>
+            <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+            <div class="CreateBoardStatus"></div> 
+        </div>
+    </div>
+</div>
+
+    <div class="InputArea">
+        <ul class="Form FancyForm">
+            <li class="noMarginBottom ">
+                <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                <label>Describe your pin&hellip;</label>
+                <span class="fff"></span>
+            </li>
+        </ul>
+        <p class="CharacterHelp">Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong> to add price.</p>
+    </div>
+
+    <div class="CreateBoardStatus error mainerror"></div>
+
+    <div class="Buttons">
+        <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+        <span class="CharacterCount colorless">500</span>
+        
+            
+            
+        
+    </div>
+
+</div>
+        </div>
+
+        <form method="POST">
+            <input type="hidden" name="board" id="id_board" value="" />
+            <input type="hidden" name="details" value="" id="id_details" />
+            <input type="hidden" name="link" value="" id="id_link" />
+            <input type="hidden" name="img_url" id="id_img_url" />
+            <input type="hidden" name="tags" id="id_tags" />
+            <input id="peeps_holder" type="hidden" name="replies" />
+            <input id="currency_holder" type="hidden" name="buyable" />
+            
+                
+                
+            
+            <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='45f237675c31883eb26f78f81734501f' /></div>
+        </form>
+
+    </div><!-- .modal.wide -->
+
+    <div class="overlay"></div>
+
+</div><!-- #ScrapePin.ModalContainer -->
+<div id="UploadPin" class="ModalContainer">
+
+        <div class="modal wide">
+
+            <div class="header lg">
+                <a href="#" class="close" onclick="AddDialog.childClose('Add','UploadPin'); return false"><strong>Close</strong><span></span></a>
+                <h2>Upload a Pin</h2>
+            </div>
+
+            <div class="PinTop">
+                <form action="/post/" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="board" id="id_board" value="" />
+                    <input type="hidden" name="details" value="" id="id_details" />
+                    <input type="hidden" name="link" value="" id="id_link" />
+                    <input type="hidden" name="img_url" id="id_img_url" />
+                    <input type="hidden" name="tags" id="id_tags" />
+                    <input id="peeps_holder" type="hidden" name="replies" />
+                    <input id="currency_holder" type="hidden" name="buyable" />
+                    <input type="file" name="img" />
+                    
+                        
+                        
+                    
+                    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='45f237675c31883eb26f78f81734501f' /></div>
+                </form>
+            </div>
+
+            <div class="PinBottom">
+                <div class="ImagePicker">
+    <img src="http://passets-cdn.pinterest.com/images/load2.gif" class="load" alt="Loading Indicator" />
+    <div class="Images pin">
+        <div class="price"></div>
+        
+        <ul>
+            
+                <li><img src="http://passets-cdn.pinterest.com/images/DefaultPin.gif" alt="Media" /></li>
+            
+        </ul>
+    </div>
+    <div class="Arrows">
+        <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+        <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+    </div>
+</div>
+
+<div class="PinForm">
+
+    <div class="BoardListOverlay"></div>
+    
+<div class="BoardSelector BoardPicker">
+    <div class="current">
+        <span class="CurrentBoard"></span>
+        <span class="DownArrow"></span>
+    </div>
+    <div class="BoardList">
+        <ul>
+            
+        </ul>
+        <div class="CreateBoard">
+            <input type="text" value="Create New Board"/>
+            <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+            <div class="CreateBoardStatus"></div> 
+        </div>
+    </div>
+</div>
+
+    <div class="InputArea">
+        <ul class="Form FancyForm">
+            <li class="noMarginBottom ">
+                <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                <label>Describe your pin&hellip;</label>
+                <span class="fff"></span>
+            </li>
+        </ul>
+        <p class="CharacterHelp">Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong> to add price.</p>
+    </div>
+
+    <div class="CreateBoardStatus error mainerror"></div>
+
+    <div class="Buttons">
+        <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+        <span class="CharacterCount colorless">500</span>
+        
+            
+            
+        
+    </div>
+
+</div>
+            </div>
+
+        </div><!-- .modal.wide -->
+
+    <div class="overlay"></div>
+
+</div><!-- #UploadPin.ModalContainer -->
+<div id="CreateBoard" class="ModalContainer">
+
+    <div class="modal wide">
+
+        <div class="header lg">
+            <a href="#" class="close" onclick="AddDialog.childClose('Add','CreateBoard'); return false"><strong>Close</strong><span></span></a>
+            <h2>Create a Board</h2>
+        </div>
+
+        <form action="" class="Form StaticForm noMargin">
+
+            <ul>
+                <li class="noBorderTop">
+                    <input id="BoardName" type="text" name="name" />
+                    <label>Board Name</label>
+                    <span class="fff"></span>
+                </li>
+                <li>
+                    <input id="id_category" type="hidden" name="category" value="" />
+
+                    <div class="BoardListOverlay"></div>
+
+                    <div id="CategoryPicker" class="BoardSelector BoardPicker">
+
+                        <div class="current">
+                            <span class="CurrentBoard">Select a Category</span>
+                            <span class="DownArrow"></span>
+                        </div>
+
+                        <div class="BoardList">
+                            <ul>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="architecture"><span>Architecture</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="art"><span>Art</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="cars_motorcycles"><span>Cars & Motorcycles</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="design"><span>Design</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="diy_crafts"><span>DIY & Crafts</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="education"><span>Education</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="film_music_books"><span>Film, Music & Books</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="fitness"><span>Fitness</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="food_drink"><span>Food & Drink</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="gardening"><span>Gardening</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="geek"><span>Geek</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="hair_beauty"><span>Hair & Beauty</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="history"><span>History</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="holidays"><span>Holidays</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="home"><span>Home Decor</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="humor"><span>Humor</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="kids"><span>Kids</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="mylife"><span>My Life</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="women_apparel"><span>Women's Apparel</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="men_apparel"><span>Men's Apparel</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="outdoors"><span>Outdoors</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="people"><span>People</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="pets"><span>Pets</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="photography"><span>Photography</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="prints_posters"><span>Print & Posters</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="products"><span>Products</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="science"><span>Science & Nature</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="sports"><span>Sports</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="technology"><span>Technology</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="travel_places"><span>Travel & Places</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="wedding_events"><span>Wedding & Events</span></li>
+                                
+                                    <li class="BoardCategory" name="BoardCategory" data="other"><span>Other</span></li>
+                                
+                            </ul>
+                        </div><!-- .BoardList -->
+
+                    </div><!-- #CategoryPicker.BoardSelector.BoardPicker -->
+
+                    <label>Board Category</label>
+                </li>
+
+                <li>
+                    <label class="radio">Who can pin?</label>
+                    <div class="Right">
+                        <div style="display:none; border-top: 0;"></div>
+                        <ul class="pinability">
+                            <li>
+                                <label>
+                                    <input type="radio" name="change_BoardCollaborators" value="me" checked="checked" />
+                                    <span>Just Me</span>
+                                </label>
+                            </li>
+                            <li class="last-child">
+                                <label>
+                                    <input type="radio" name="change_BoardCollaborators" value="multiple" />
+                                    <span>Me + Contributors</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='45f237675c31883eb26f78f81734501f' /></div>
+
+                    <div id="add_collaborators" style="display: none;">
+                        <span id="invite_response"></span>
+                        <input type="text" name="collaborator_name" value="Name or Email Address" id="collaborator_name" />
+                        <a href="#" id="submit_collaborator" class="Button WhiteButton Button18 collab_button"><strong>Add</strong><span></span></a>
+                        <ul id="CurrentCollaborators"></ul>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="Submit"><a href="#" class="Button RedButton Button18"><strong>Create Board</strong><span></span></a></div>
+
+            <div class="CreateBoardStatus error"></div>
+
+        </form>
+
+    </div><!-- .modal -->
+
+    <div class="overlay"></div>
+
+</div><!-- #CreateBoard.ModalContainer -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        ScrapePinDialog.setup();
+        UploadPinDialog.setup();
+        CreateBoardDialog.setup();
+        FancyForm.setup();
+    });
+</script>
+
+    
+        <script type="text/javascript">
+    $(document).ready(function() {
+        Nag.setup('UnauthCallout');
+    });
+</script>
+
+<div id="UnauthCallout">
+    <div class="Nag">
+        <div class="Sheet1 Sheet">
+            <div>
+                <!-- If FB-referred visitor -->
+                <!--<a href="[[ MAGICAL ORIENTATION STEP 2 LINK ]]" class="Button RedButton Button18"><strong>Join Pinterest Today &raquo;</strong><span></span></a>-->
+                <!-- Else if regular visitor -->
+                <a href="/landing/" class="Button RedButton Button18"><strong>Request an Invite &raquo;</strong><span></span></a>
+                <a href="/login/?next=%2Fsource%2Fgemvara.com%2F" class="Button WhiteButton Button18"><strong>Login</strong><span></span></a>
+            </div>
+            <p><strong>Pinterest is an online pinboard.</strong><br />Organize and share things you love.</p>
+        </div>
+        <div class="Sheet2 Sheet"></div>
+        <div class="Sheet3 Sheet"></div>
+    </div>
+    <div class="NagSpacer"></div>
+</div>
+    
+
+    <div id="wrapper" class="BoardLayout">
+
+        <div id="ContextBar" class="board">
+            <div id="introductionRight"></div>
+            <p>Pins from <a href="http://gemvara.com">Gemvara</a></p>
+        </div>
+
+        <div id="ColumnContainer">
+
+            
+    
+
+
+
+
+    <div class="pin" data-id="102105116521772546" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/102105116521772546/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://media-cdn.pinterest.com/upload/102105116521772546_iG0In6Pc_b.jpg" alt="Pretty!" class="PinImageImg" style="height: 192px;" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Pretty!</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/ssafarik1/" title="Sarah S" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/ssafarik1_1330444863.jpg" alt="Picture of Sarah S" />
+                </a>
+                <p>
+                    <a href="/ssafarik1/">Sarah S</a>
+                    
+                    onto <a href="/ssafarik1/things-i-want/">Things I Want</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="107171666102635930" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/107171666102635930/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://media-cdn.pinterest.com/upload/107171666102635930_og5G5dHi_b.jpg" alt="Simply Princess Solitaire, Princess Diamond 14K White Gold Ring from Gemvara" class="PinImageImg" style="height: 192px;" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Simply Princess Solitaire, Princess Diamond 14K White Gold Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/michelleheld420/" title="Michelle Held" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/michelleheld420-0.jpg" alt="Picture of Michelle Held" />
+                </a>
+                <p>
+                    <a href="/michelleheld420/">Michelle Held</a>
+                    
+                    onto <a href="/michelleheld420/wedding-ideas/">Wedding Ideas</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="80994493268460703" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/80994493268460703/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://media-cdn.pinterest.com/upload/80994493268460703_Z9oym9GF_b.jpg" alt="Hercules Knot Ring, Round Blue Topaz  Sterling Silver Ring from Gemvara" class="PinImageImg" style="height: 192px;" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hercules Knot Ring, Round Blue Topaz  Sterling Silver Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">10 likes&nbsp;&nbsp;</span><span class="RepinsCount">23 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/lauramort920/" title="Laura Mort" class="ImgLink">
+                    <img src="http://graph.facebook.com/556699110/picture?type=square" alt="Picture of Laura Mort" />
+                </a>
+                <p>
+                    <a href="/lauramort920/">Laura Mort</a>
+                    
+                    onto <a href="/lauramort920/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="102527328986887186" data-width="120" data-height="120">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/102527328986887186/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://media-cdn.pinterest.com/upload/102527328986887186_Kw4gOJvG_b.jpg" alt="i made this lol" class="PinImageImg" style="height: 120px;" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">i made this lol</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/nataliejoh/" title="Natalie Hembree" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/nataliejoh-67.jpg" alt="Picture of Natalie Hembree" />
+                </a>
+                <p>
+                    <a href="/nataliejoh/">Natalie Hembree</a>
+                    
+                    onto <a href="/nataliejoh/stuff/">stuff</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="117375134008301776" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/117375134008301776/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://media-cdn.pinterest.com/upload/117375134008301776_5vXXsoUI_b.jpg" alt="I like the accent stones black diamond. Breaks it up a bit. - Or just accent stone reg. diamond. lol" class="PinImageImg" style="height: 192px;" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">I like the accent stones black diamond. Breaks it up a bit. - Or just accent stone reg. diamond. lol</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">4 likes&nbsp;&nbsp;</span><span class="RepinsCount">5 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/crystalstar900/" title="Crystal Martin" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/crystalstar900_1328669337.jpg" alt="Picture of Crystal Martin" />
+                </a>
+                <p>
+                    <a href="/crystalstar900/">Crystal Martin</a>
+                    
+                    onto <a href="/crystalstar900/wedding/">Wedding!</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="177399672791895379" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/177399672791895379/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="177399672791895379" data-src="http://media-cdn.pinterest.com/upload/177399672791895379_3SvEqHEF_b.jpg" alt="Infinity Knot Ring  Round Tanzanite Platinum Ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Infinity Knot Ring  Round Tanzanite Platinum Ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/cyamauchi/" title="Chikae Yamauchi" class="ImgLink">
+                    <img src="http://graph.facebook.com/4205749/picture?type=square" alt="Picture of Chikae Yamauchi" />
+                </a>
+                <p>
+                    <a href="/cyamauchi/">Chikae Yamauchi</a>
+                    
+                    onto <a href="/cyamauchi/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="184577284698035694" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/184577284698035694/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="184577284698035694" data-src="http://media-cdn.pinterest.com/upload/184577284698035694_nPOnvmJA_b.jpg" alt="Liana Ring with Three Gems, Sterling Silver Ring with Aquamarine from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Liana Ring with Three Gems, Sterling Silver Ring with Aquamarine from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">3 likes&nbsp;&nbsp;</span><span class="RepinsCount">25 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/osantiag/" title="Christie Lockwood" class="ImgLink">
+                    <img src="http://graph.facebook.com/620802716/picture?type=square" alt="Picture of Christie Lockwood" />
+                </a>
+                <p>
+                    <a href="/osantiag/">Christie Lockwood</a>
+                    
+                    onto <a href="/osantiag/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="29203097553748402" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/29203097553748402/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="29203097553748402" data-src="http://media-cdn.pinterest.com/upload/29203097553748402_3rfRSyKq_b.jpg" alt="Written in the Stars Ring, 14K White Gold Ring with Tanzanite from Gemvara - like it!" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Written in the Stars Ring, 14K White Gold Ring with Tanzanite from Gemvara - like it!</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/illig8/" title="Erika Illig" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/illig8_1328143298.jpg" alt="Picture of Erika Illig" />
+                </a>
+                <p>
+                    <a href="/illig8/">Erika Illig</a>
+                    
+                    onto <a href="/illig8/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="11751648997714343" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/11751648997714343/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="11751648997714343" data-src="http://media-cdn.pinterest.com/upload/11751648997714343_rMrg292t_b.jpg" alt="oh my" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">oh my</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">55 likes&nbsp;&nbsp;</span><span class="CommentsCount">3 comments&nbsp;&nbsp;</span><span class="RepinsCount">125 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/bluemtndiva/" title="Marcie Horne" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/bluemtndiva-15.jpg" alt="Picture of Marcie Horne" />
+                </a>
+                <p>
+                    <a href="/bluemtndiva/">Marcie Horne</a>
+                    
+                    onto <a href="/bluemtndiva/yummyness/">Yummyness</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/mememimi6/" class="ImgLink">
+                                <img src="http://graph.facebook.com/100000543795297/picture?type=square" alt="Picture of mememimi6" />
+                            </a>
+                            <p><a href="/mememimi6/">Sherry Crochet</a> Put your kids birthstones in there.</p>
+                        </div>
+                    
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/starblaze85/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/starblaze85_1330600651.jpg" alt="Picture of starblaze85" />
+                            </a>
+                            <p><a href="/starblaze85/">Brit Pool</a> I want</p>
+                        </div>
+                    
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/lifeisgood1066/" class="ImgLink">
+                                <img src="http://graph.facebook.com/1584334188/picture?type=square" alt="Picture of lifeisgood1066" />
+                            </a>
+                            <p><a href="/lifeisgood1066/">Cindy Hammitt</a> <a href='/dilettante6767/' title='Kim Crowder'>@Kim Crowder</a></p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="82050024431143840" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/82050024431143840/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="82050024431143840" data-src="http://media-cdn.pinterest.com/upload/82050024431143840_i1R7QbnY_b.jpg" alt="Gemvara custom ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Gemvara custom ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="RepinsCount">6 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/queencicada/" title="Luna Valentine" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/queencicada-11.jpg" alt="Picture of Luna Valentine" />
+                </a>
+                <p>
+                    <a href="/queencicada/">Luna Valentine</a>
+                    
+                    onto <a href="/queencicada/the-some-day-wedding-board/">the Some Day Wedding Board</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="137430226098975902" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/137430226098975902/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="137430226098975902" data-src="http://media-cdn.pinterest.com/upload/137430226098975902_1qUf0cR6_b.jpg" alt="Hopscotch Eternity Band, 14K White Gold Ring with Diamond from Gemvara   Looks like me!!  :)" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hopscotch Eternity Band, 14K White Gold Ring with Diamond from Gemvara   Looks like me!!  :)</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">3 likes&nbsp;&nbsp;</span><span class="RepinsCount">4 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/cao0619/" title="Carol Owens" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/cao0619_1330384151.jpg" alt="Picture of Carol Owens" />
+                </a>
+                <p>
+                    <a href="/cao0619/">Carol Owens</a>
+                    
+                    onto <a href="/cao0619/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="209558188881103401" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/209558188881103401/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="209558188881103401" data-src="http://media-cdn.pinterest.com/upload/209558188881103401_396afhOk_b.jpg" alt="Hercules Knot Ring, Round Green Tourmaline  Palladium Ring from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hercules Knot Ring, Round Green Tourmaline  Palladium Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="RepinsCount">8 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/sarasmile06/" title="Sara Green" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/sarasmile06_1329104828.jpg" alt="Picture of Sara Green" />
+                </a>
+                <p>
+                    <a href="/sarasmile06/">Sara Green</a>
+                    
+                    onto <a href="/sarasmile06/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="237705686552141123" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/237705686552141123/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="237705686552141123" data-src="http://media-cdn.pinterest.com/upload/237705686552141123_lFVovXho_b.jpg" alt="SImple yet beautiful" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">SImple yet beautiful</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">10 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/autumnlake1970/" title="Beth Lackey" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/autumnlake1970_1328525917.jpg" alt="Picture of Beth Lackey" />
+                </a>
+                <p>
+                    <a href="/autumnlake1970/">Beth Lackey</a>
+                    
+                    onto <a href="/autumnlake1970/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="270567890083059521" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/270567890083059521/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="270567890083059521" data-src="http://media-cdn.pinterest.com/upload/270567890083059521_UzrpMN80_b.jpg" alt="LOVE IT!" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">LOVE IT!</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/daphnebeaton/" title="Daphne Beaton" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/daphnebeaton_1330123278.jpg" alt="Picture of Daphne Beaton" />
+                </a>
+                <p>
+                    <a href="/daphnebeaton/">Daphne Beaton</a>
+                    
+                    onto <a href="/daphnebeaton/fashion/">Fashion</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="268316090269424612" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/268316090269424612/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="268316090269424612" data-src="http://media-cdn.pinterest.com/upload/268316090269424612_y6JYuoHF_b.jpg" alt="Brilliant Alhambra Band, Sterling Silver Ring with Diamond from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Brilliant Alhambra Band, Sterling Silver Ring with Diamond from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="CommentsCount">1 comment&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/surgeryho/" title="D.m. Williams" class="ImgLink">
+                    <img src="http://graph.facebook.com/100002586811580/picture?type=square" alt="Picture of D.m. Williams" />
+                </a>
+                <p>
+                    <a href="/surgeryho/">D.m. Williams</a>
+                    
+                    onto <a href="/surgeryho/products-i-love/">Products I Love</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/surgeryho/" class="ImgLink">
+                                <img src="http://graph.facebook.com/100002586811580/picture?type=square" alt="Picture of surgeryho" />
+                            </a>
+                            <p><a href="/surgeryho/">D.m. Williams</a> Lovely</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="3237030952147601" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/3237030952147601/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="3237030952147601" data-src="http://media-cdn.pinterest.com/upload/3237030952147601_So3NhboG_b.jpg" alt="It&#39;s different. I like it." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">It's different. I like it.</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">23 likes&nbsp;&nbsp;</span><span class="CommentsCount">1 comment&nbsp;&nbsp;</span><span class="RepinsCount">57 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/dela0202/" title="Brittany DeLacy" class="ImgLink">
+                    <img src="http://graph.facebook.com/724413008/picture?type=square" alt="Picture of Brittany DeLacy" />
+                </a>
+                <p>
+                    <a href="/dela0202/">Brittany DeLacy</a>
+                    
+                    onto <a href="/dela0202/wedding-stuff/">Wedding stuff</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/troi/" class="ImgLink">
+                                <img src="http://graph.facebook.com/1392430878/picture?type=square" alt="Picture of troi" />
+                            </a>
+                            <p><a href="/troi/">Troi Lane Wallace</a> Me 2!</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="22729173089396309" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/22729173089396309/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="22729173089396309" data-src="http://media-cdn.pinterest.com/upload/22729173089396309_AtfwioAS_b.jpg" alt="Hercules Knot Ring  Round Blue Topaz Sterling Silver Ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hercules Knot Ring  Round Blue Topaz Sterling Silver Ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="RepinsCount">16 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/rothy7/" title="Maggie Barron" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/rothy7_1330195405.jpg" alt="Picture of Maggie Barron" />
+                </a>
+                <p>
+                    <a href="/rothy7/">Maggie Barron</a>
+                    
+                    onto <a href="/rothy7/jewelry/">Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="26951297740072662" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/26951297740072662/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="26951297740072662" data-src="http://media-cdn.pinterest.com/upload/26951297740072662_WZI7eSjP_b.jpg" alt="Perfect. &lt;3" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Perfect. &#9829;</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/kmilos/" title="Kelly Milos" class="ImgLink">
+                    <img src="http://graph.facebook.com/522147523/picture?type=square" alt="Picture of Kelly Milos" />
+                </a>
+                <p>
+                    <a href="/kmilos/">Kelly Milos</a>
+                    
+                    onto <a href="/kmilos/wedding-ideas/">Wedding Ideas</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="69876231688387416" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/69876231688387416/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="69876231688387416" data-src="http://media-cdn.pinterest.com/upload/69876231688387416_RVDiRNj3_b.jpg" alt="I want!  Infinite Love Ring, Sterling Silver Ring with Peridot &amp; Citrine from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">I want!  Infinite Love Ring, Sterling Silver Ring with Peridot & Citrine from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">6 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/traceymurphy87/" title="Tracey Murphy" class="ImgLink">
+                    <img src="http://graph.facebook.com/100000135622035/picture?type=square" alt="Picture of Tracey Murphy" />
+                </a>
+                <p>
+                    <a href="/traceymurphy87/">Tracey Murphy</a>
+                    
+                    onto <a href="/traceymurphy87/lovely/">lovely</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="264023596874582354" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/264023596874582354/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="264023596874582354" data-src="http://media-cdn.pinterest.com/upload/264023596874582354_OgoIKuzY_b.jpg" alt="Guitar Band, Men&#39;s 14K White Gold Ring with Emerald from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Guitar Band, Men's 14K White Gold Ring with Emerald from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">1 repin&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/tat1122/" title="Toni Trinks" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/tat1122_1330090731.jpg" alt="Picture of Toni Trinks" />
+                </a>
+                <p>
+                    <a href="/tat1122/">Toni Trinks</a>
+                    
+                    onto <a href="/tat1122/books-worth-reading/">Books Worth Reading</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="143974519307544650" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/143974519307544650/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="143974519307544650" data-src="http://media-cdn.pinterest.com/upload/143974519307544650_8LH9lbsL_b.jpg" alt="Emerald Isle Ring, Emerald-Cut Diamond 14K White Gold Ring from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Emerald Isle Ring, Emerald-Cut Diamond 14K White Gold Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">4 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/wordsmarie/" title="Ann-Marie Vazzano" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/wordsmarie_1330622134.jpg" alt="Picture of Ann-Marie Vazzano" />
+                </a>
+                <p>
+                    <a href="/wordsmarie/">Ann-Marie Vazzano</a>
+                    
+                    onto <a href="/wordsmarie/vintage-and-vintage-inspired-jewelry-i-find-sassy-/">Vintage and Vintage-inspired Jewelry I Find Sassy and Appealing</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="95349717080719699" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/95349717080719699/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="95349717080719699" data-src="http://media-cdn.pinterest.com/upload/95349717080719699_FQYYPNKn_b.jpg" alt="Slim Nine-Gem Band Ring, 14K Yellow Gold Ring with Iolite &amp; White Sapphire from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Slim Nine-Gem Band Ring, 14K Yellow Gold Ring with Iolite & White Sapphire from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/kdantle/" title="Kathy Antle" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/kdantle-92.jpg" alt="Picture of Kathy Antle" />
+                </a>
+                <p>
+                    <a href="/kdantle/">Kathy Antle</a>
+                    
+                    onto <a href="/kdantle/jewelry/">Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="283445370267614455" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/283445370267614455/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="283445370267614455" data-src="http://media-cdn.pinterest.com/upload/283445370267614455_OMg63A0w_b.jpg" alt="Gemvara... my new obsession." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Gemvara... my new obsession.</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">11 likes&nbsp;&nbsp;</span><span class="RepinsCount">27 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/featherboagirl/" title="Heather Brandon" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/featherboagirl_1330621016.jpg" alt="Picture of Heather Brandon" />
+                </a>
+                <p>
+                    <a href="/featherboagirl/">Heather Brandon</a>
+                    
+                    onto <a href="/featherboagirl/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="237705686552139223" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/237705686552139223/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="237705686552139223" data-src="http://media-cdn.pinterest.com/upload/237705686552139223_vqwyUaZ0_b.jpg" alt="Would love this stone choice after my youngest daughter&#39;s birth month and my anniversary month" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Would love this stone choice after my youngest daughter's birth month and my anniversary month</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">2 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/autumnlake1970/" title="Beth Lackey" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/autumnlake1970_1328525917.jpg" alt="Picture of Beth Lackey" />
+                </a>
+                <p>
+                    <a href="/autumnlake1970/">Beth Lackey</a>
+                    
+                    onto <a href="/autumnlake1970/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="9781324160683949" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/9781324160683949/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="9781324160683949" data-src="http://media-cdn.pinterest.com/upload/9781324160683949_ScZEoPqG_b.jpg" alt="Pretty infinity ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Pretty infinity ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="CommentsCount">1 comment&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/ipatti/" title="Patti Fichera" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/ipatti-17.jpg" alt="Picture of Patti Fichera" />
+                </a>
+                <p>
+                    <a href="/ipatti/">Patti Fichera</a>
+                    
+                    onto <a href="/ipatti/things-i-like/">Things I like</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/gemvara/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/gemvara-92.jpg" alt="Picture of gemvara" />
+                            </a>
+                            <p><a href="/gemvara/">Gemvara</a> WOW! What a Gorgeous Gem combo! You should consider entering in our Celtic Ring Sweepstakes in order to win $500 towards this piece on gemvara.com! <a href="http://pinterest.com/pin/255649716317394993/" rel="nofollow">http://pinterest.com/pin/25...</a></p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="246923992039476236" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/246923992039476236/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="246923992039476236" data-src="http://media-cdn.pinterest.com/upload/246923992039476236_59Nv8lHj_b.jpg" alt="I want it with my kiddos birthstones!" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">I want it with my kiddos birthstones!</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="CommentsCount">1 comment&nbsp;&nbsp;</span><span class="RepinsCount">1 repin&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/jondac/" title="Jonda Cherry" class="ImgLink">
+                    <img src="http://graph.facebook.com/630101208/picture?type=square" alt="Picture of Jonda Cherry" />
+                </a>
+                <p>
+                    <a href="/jondac/">Jonda Cherry</a>
+                    
+                    onto <a href="/jondac/for-muah/">For muah!</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/gemvara/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/gemvara-92.jpg" alt="Picture of gemvara" />
+                            </a>
+                            <p><a href="/gemvara/">Gemvara</a> That would make a LOVELY Mother's ring! You should consider entering in our Celtic Ring Sweepstakes in order to win $500 towards this purchase on gemvara.com! <a href="http://pinterest.com/pin/255649716317394993/" rel="nofollow">http://pinterest.com/pin/25...</a></p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="159385274282400382" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/159385274282400382/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="159385274282400382" data-src="http://media-cdn.pinterest.com/upload/159385274282400382_JoKB3mXg_b.jpg" alt="Morgan Ring, Round Diamond  Platinum Ring from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Morgan Ring, Round Diamond  Platinum Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="CommentsCount">1 comment&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/chanda1025/" title="Chanda Em" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/chanda1025_1331047967.jpg" alt="Picture of Chanda Em" />
+                </a>
+                <p>
+                    <a href="/chanda1025/">Chanda Em</a>
+                    
+                    onto <a href="/chanda1025/wedding-ideas/">Wedding Ideas</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/gemvara/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/gemvara-92.jpg" alt="Picture of gemvara" />
+                            </a>
+                            <p><a href="/gemvara/">Gemvara</a> This is gorgeous!</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="181058847489162896" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/181058847489162896/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="181058847489162896" data-src="http://media-cdn.pinterest.com/upload/181058847489162896_1gMtqPmI_b.jpg" alt="Rich and Thin" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Rich and Thin</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="RepinsCount">1 repin&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/ekspeaks/" title="Emily Shiraki" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/ekspeaks-19.jpg" alt="Picture of Emily Shiraki" />
+                </a>
+                <p>
+                    <a href="/ekspeaks/">Emily Shiraki</a>
+                    
+                    onto <a href="/ekspeaks/because-i-m-a-girl/">Because I&#39;m a girl...</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="225391156321021101" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/225391156321021101/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="225391156321021101" data-src="http://media-cdn.pinterest.com/upload/225391156321021101_wIP5Nrp5_b.jpg" alt="Two Hearts Ring, Sterling Silver Ring with Emerald &amp; Sapphire from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Two Hearts Ring, Sterling Silver Ring with Emerald & Sapphire from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">5 likes&nbsp;&nbsp;</span><span class="RepinsCount">8 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/runsarahrunnj/" title="Sarah Hartigan" class="ImgLink">
+                    <img src="http://graph.facebook.com/506647812/picture?type=square" alt="Picture of Sarah Hartigan" />
+                </a>
+                <p>
+                    <a href="/runsarahrunnj/">Sarah Hartigan</a>
+                    
+                    onto <a href="/runsarahrunnj/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="132856257727427535" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/132856257727427535/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="132856257727427535" data-src="http://media-cdn.pinterest.com/upload/132856257727427535_WxpH68LI_b.jpg" alt="Look what I got yesterday :)" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Look what I got yesterday :)</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">3 likes&nbsp;&nbsp;</span><span class="CommentsCount">2 comments&nbsp;&nbsp;</span><span class="RepinsCount">2 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/sierra318/" title="Sierra Carter" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/sierra318-1.jpg" alt="Picture of Sierra Carter" />
+                </a>
+                <p>
+                    <a href="/sierra318/">Sierra Carter</a>
+                    
+                    onto <a href="/sierra318/purty/">purty </a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/gemvara/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/gemvara-92.jpg" alt="Picture of gemvara" />
+                            </a>
+                            <p><a href="/gemvara/">Gemvara</a> Oh my gosh! That's gorgeous! Congrats!!! What was the occasion?</p>
+                        </div>
+                    
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/sierra318/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/sierra318-1.jpg" alt="Picture of sierra318" />
+                            </a>
+                            <p><a href="/sierra318/">Sierra Carter</a> I love it! The occasion was Valentine's Day/my birthday!</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="4996249556681028" data-width="180" data-height="180">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/4996249556681028/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="4996249556681028" data-src="http://media-cdn.pinterest.com/upload/4996249556681028_VNn1shNy_b.jpg" alt="fav" class="PinImageImg lazy" width="192" height="180" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">fav</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/aliciac121/" title="Alicia Eckhardt" class="ImgLink">
+                    <img src="http://graph.facebook.com/100000198278649/picture?type=square" alt="Picture of Alicia Eckhardt" />
+                </a>
+                <p>
+                    <a href="/aliciac121/">Alicia Eckhardt</a>
+                    
+                    onto <a href="/aliciac121/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="193373377720272183" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/193373377720272183/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="193373377720272183" data-src="http://media-cdn.pinterest.com/upload/193373377720272183_AyL4IqvE_b.jpg" alt="&lt;3 this ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">&#9829; this ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/mitsuko17/" title="Lindz Beetz" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/mitsuko17-33.jpg" alt="Picture of Lindz Beetz" />
+                </a>
+                <p>
+                    <a href="/mitsuko17/">Lindz Beetz</a>
+                    
+                    onto <a href="/mitsuko17/in-the-future/">In the future :)</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="135671007494564040" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/135671007494564040/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="135671007494564040" data-src="http://media-cdn.pinterest.com/upload/135671007494564040_CcDdAa04_b.jpg" alt="Hercules Knot Ring, Round Iolite  Sterling Silver Ring from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hercules Knot Ring, Round Iolite  Sterling Silver Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/savingpennies7/" title="Sarah Burggraaf" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/savingpennies7_1330980911.jpg" alt="Picture of Sarah Burggraaf" />
+                </a>
+                <p>
+                    <a href="/savingpennies7/">Sarah Burggraaf</a>
+                    
+                    onto <a href="/savingpennies7/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="85216617919164762" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/85216617919164762/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="85216617919164762" data-src="http://media-cdn.pinterest.com/upload/85216617919164762_nkqzn55w_b.jpg" alt="Savannah Ring, 14K Rose Gold, with lots of diamonds" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Savannah Ring, 14K Rose Gold, with lots of diamonds</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">4 likes&nbsp;&nbsp;</span><span class="RepinsCount">2 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/jessbwr8/" title="Jessica Wright" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/jessbwr8-31.jpg" alt="Picture of Jessica Wright" />
+                </a>
+                <p>
+                    <a href="/jessbwr8/">Jessica Wright</a>
+                    
+                    onto <a href="/jessbwr8/wish-list/">wish list :)</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="193091902743491237" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/193091902743491237/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="193091902743491237" data-src="http://media-cdn.pinterest.com/upload/193091902743491237_6734MpQ9_b.jpg" alt="Hercules Knot Ring, Round Ruby  Sterling Silver Ring from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Hercules Knot Ring, Round Ruby  Sterling Silver Ring from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/sarahmracine/" title="Sarah Racine" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/sarahmracine-30.jpg" alt="Picture of Sarah Racine" />
+                </a>
+                <p>
+                    <a href="/sarahmracine/">Sarah Racine</a>
+                    
+                    onto <a href="/sarahmracine/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="238761217714770269" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/238761217714770269/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="238761217714770269" data-src="http://media-cdn.pinterest.com/upload/238761217714770269_oBHjWa7E_b.jpg" alt="." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">.</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="RepinsCount">2 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/kalisun/" title="Shawn Michelle" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/kalisun-89.jpg" alt="Picture of Shawn Michelle" />
+                </a>
+                <p>
+                    <a href="/kalisun/">Shawn Michelle</a>
+                    
+                    onto <a href="/kalisun/adornment/">adornment</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="268808671478675174" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/268808671478675174/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="268808671478675174" data-src="http://media-cdn.pinterest.com/upload/268808671478675174_hrTajcBh_b.jpg" alt="Lotus Ring" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Lotus Ring</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">3 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/eileenkv/" title="Eileen McGuinn" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/eileenkv-88.jpg" alt="Picture of Eileen McGuinn" />
+                </a>
+                <p>
+                    <a href="/eileenkv/">Eileen McGuinn</a>
+                    
+                    onto <a href="/eileenkv/my-style/">My Style</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="38843615506081858" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/38843615506081858/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="38843615506081858" data-src="http://media-cdn.pinterest.com/upload/38843615506081858_tSpfo1xr_b.jpg" alt="Infinite Love Ring, 14K White Gold Ring with Blue Topaz &amp; Pink Sapphire from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Infinite Love Ring, 14K White Gold Ring with Blue Topaz & Pink Sapphire from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="CommentsCount">1 comment&nbsp;&nbsp;</span><span class="RepinsCount">4 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/bansheecry/" title="Abigail Pinter" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/bansheecry_1331020737.jpg" alt="Picture of Abigail Pinter" />
+                </a>
+                <p>
+                    <a href="/bansheecry/">Abigail Pinter</a>
+                    
+                    onto <a href="/bansheecry/my-favorite-gemvara-celtic-jewelry/">My Favorite Gemvara Celtic Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/lbwood/" class="ImgLink">
+                                <img src="http://graph.facebook.com/662992516/picture?type=square" alt="Picture of lbwood" />
+                            </a>
+                            <p><a href="/lbwood/">Lindsay Wood</a> OH I HAVE THIS! My fiance bought it for me with our birthstones in it for our first christmas!</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="209558188881100218" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/209558188881100218/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="209558188881100218" data-src="http://media-cdn.pinterest.com/upload/209558188881100218_u5AoJ0Ld_b.jpg" alt="Lotus Ring, Round Green Tourmaline  Palladium Ring with Black Diamond from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Lotus Ring, Round Green Tourmaline  Palladium Ring with Black Diamond from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/sarasmile06/" title="Sara Green" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/sarasmile06_1329104828.jpg" alt="Picture of Sara Green" />
+                </a>
+                <p>
+                    <a href="/sarasmile06/">Sara Green</a>
+                    
+                    onto <a href="/sarasmile06/someday-a-girl-can-dream-right/">Someday... A girl can dream, right?</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="264234703107125005" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/264234703107125005/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="264234703107125005" data-src="http://media-cdn.pinterest.com/upload/264234703107125005_r4puYCLh_b.jpg" alt="love this necklace." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">love this necklace.</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="RepinsCount">2 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/haleydn09/" title="Haley Newman" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/haleydn09-83.jpg" alt="Picture of Haley Newman" />
+                </a>
+                <p>
+                    <a href="/haleydn09/">Haley Newman</a>
+                    
+                    onto <a href="/haleydn09/anchors/">Anchors</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="105201341265615833" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/105201341265615833/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="105201341265615833" data-src="http://media-cdn.pinterest.com/upload/105201341265615833_GyIFDlcN_b.jpg" alt="Wonder if I can get my ring modified to look like this?" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Wonder if I can get my ring modified to look like this?</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="RepinsCount">1 repin&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/theearthwyfe/" title="Ayla" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/theearthwyfe_1327829824.jpg" alt="Picture of Ayla" />
+                </a>
+                <p>
+                    <a href="/theearthwyfe/">Ayla</a>
+                    
+                    onto <a href="/theearthwyfe/clothes-accessories/">Clothes :: Accessories</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="12173861462794420" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/12173861462794420/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="12173861462794420" data-src="http://media-cdn.pinterest.com/upload/12173861462794420_dlCEAoKG_b.jpg" alt="birthstone" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">birthstone</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/fluffyrunner/" title="Amber Gamell Hall" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/fluffyrunner_1328156897.jpg" alt="Picture of Amber Gamell Hall" />
+                </a>
+                <p>
+                    <a href="/fluffyrunner/">Amber Gamell Hall</a>
+                    
+                    onto <a href="/fluffyrunner/if-i-was-fashionable/">If I was fashionable</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="65794844526088936" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/65794844526088936/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="65794844526088936" data-src="http://media-cdn.pinterest.com/upload/65794844526088936_sfvJn8ZT_b.jpg" alt="Absolutely LOVE this one" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Absolutely LOVE this one</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">10 likes&nbsp;&nbsp;</span><span class="RepinsCount">33 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/brittonyj/" title="Brittony Parker" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/brittonyj-68.jpg" alt="Picture of Brittony Parker" />
+                </a>
+                <p>
+                    <a href="/brittonyj/">Brittony Parker</a>
+                    
+                    onto <a href="/brittonyj/wedding-bands/">Wedding bands</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="192106740325042137" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/192106740325042137/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="192106740325042137" data-src="http://media-cdn.pinterest.com/upload/192106740325042137_J7ruGlny_b.jpg" alt="Fiona Marquise - sterling silver with onyx" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Fiona Marquise - sterling silver with onyx</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/ariuus49/" title="Ashley Clark" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/ariuus49-84.jpg" alt="Picture of Ashley Clark" />
+                </a>
+                <p>
+                    <a href="/ariuus49/">Ashley Clark</a>
+                    
+                    onto <a href="/ariuus49/shiny/">Shiny! </a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="168533211025551527" data-width="320" data-height="320">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/168533211025551527/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="168533211025551527" data-src="http://media-cdn.pinterest.com/upload/168533211025551527_uuxasQNY_b.jpg" alt="Quintessence Ring, 14K Yellow Gold Ring with Ruby &amp; Diamond from Gemvara" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Quintessence Ring, 14K Yellow Gold Ring with Ruby & Diamond from Gemvara</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">1 like&nbsp;&nbsp;</span><span class="RepinsCount">1 repin&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/ktbugg280/" title="Katie Voss" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/ktbugg280-82.jpg" alt="Picture of Katie Voss" />
+                </a>
+                <p>
+                    <a href="/ktbugg280/">Katie Voss</a>
+                    
+                    onto <a href="/ktbugg280/jewelry/">Jewelry</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="161777811584426107" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/161777811584426107/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="161777811584426107" data-src="http://media-cdn.pinterest.com/upload/161777811584426107_jzUcyAVS_b.jpg" alt="birthstones...nik and mine...beyond LOVE this ring..." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">birthstones...nik and mine...beyond LOVE this ring...</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">11 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/farfalladreams/" title="Natasha Zettler" class="ImgLink">
+                    <img src="http://graph.facebook.com/518063885/picture?type=square" alt="Picture of Natasha Zettler" />
+                </a>
+                <p>
+                    <a href="/farfalladreams/">Natasha Zettler</a>
+                    
+                    onto <a href="/farfalladreams/threads-and-details/">threads and details</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="247416573248713587" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/247416573248713587/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="247416573248713587" data-src="http://media-cdn.pinterest.com/upload/247416573248713587_HYeoEcTy_b.jpg" alt="Cecilia Ring- Cushion Sapphire Platinum Ring with Diamonds" class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">Cecilia Ring- Cushion Sapphire Platinum Ring with Diamonds</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">2 likes&nbsp;&nbsp;</span><span class="RepinsCount">5 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/xmascollins/" title="Christine Natale" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/xmascollins-51.jpg" alt="Picture of Christine Natale" />
+                </a>
+                <p>
+                    <a href="/xmascollins/">Christine Natale</a>
+                    
+                    onto <a href="/xmascollins/wedding-ideas/">Wedding Ideas</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+
+        
+        
+
+    </div>
+
+
+
+    <div class="pin" data-id="26458716530787522" data-width="400" data-height="400">
+
+        
+        <div class="actions">
+            <div class="right">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Comment</strong><span></span>
+                </a>
+            </div>
+            <div class="left">
+                <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                    <strong><em></em>Repin</strong><span></span>
+                </a>
+                
+                    
+                            <a href="/landing/?next=%2Fsource%2Fgemvara.com%2F" class="Button Button11 WhiteButton">
+                                <strong><em></em>Like</strong><span></span>
+                            </a>
+                    
+                
+            </div>
+        </div>
+
+        
+        <a href="/pin/26458716530787522/" class="PinImage ImgLink">
+
+            
+            
+
+            
+            
+            	<img src="http://passets-cdn.pinterest.com/images/whiteTransparent.png" data-id="26458716530787522" data-src="http://media-cdn.pinterest.com/upload/26458716530787522_Oad6uEps_b.jpg" alt="." class="PinImageImg lazy" width="192" height="192" />
+            
+
+            
+            
+                
+            
+
+        </a>
+
+        
+        <p class="description">.</p>
+
+        
+        
+            
+            
+            
+        
+        <p class="stats colorless"><span class="LikesCount">3 likes&nbsp;&nbsp;</span><span class="CommentsCount">1 comment&nbsp;&nbsp;</span><span class="RepinsCount">13 repins&nbsp;&nbsp;</span></p>
+
+        
+        <div class="convo attribution clearfix">
+
+            
+            
+
+            
+                <a href="/farmgirl99/" title="Abby Taylor" class="ImgLink">
+                    <img src="http://media-cdn.pinterest.com/avatars/farmgirl99-26.jpg" alt="Picture of Abby Taylor" />
+                </a>
+                <p>
+                    <a href="/farmgirl99/">Abby Taylor</a>
+                    
+                    onto <a href="/farmgirl99/epic/">Epic</a>
+                </p>
+            
+        </div>
+
+        
+        
+        
+            <div class="comments colormuted">
+                
+                    
+                    
+                        <div class="comment convo clearfix">
+                            <a href="/jlycurgus/" class="ImgLink">
+                                <img src="http://media-cdn.pinterest.com/avatars/jlycurgus_1331003369.jpg" alt="Picture of jlycurgus" />
+                            </a>
+                            <p><a href="/jlycurgus/">John Offutt</a> It's shiny so I like!</p>
+                        </div>
+                    
+                
+                
+            </div>
+        
+
+        
+        
+
+    </div>
+
+
+
+
+        </div> <!-- #ColumnContainer -->
+
+        <!-- Paginator -->
+        
+
+        <!-- Infinite scroll loading indicator -->
+        
+
+    </div><!-- #wrapper -->
+
+</body>
+<script type="text/javascript">
+
+    BoardLayout.setup();
+
+    $.pageless.settings.complete = function(){
+
+        
+
+        BoardLayout.newPins();
+
+    };
+
+    $(document).ready(function() {
+
+        
+            $('#ColumnContainer').pageless({
+                "totalPages": 7,
+                "loader": "LoadingPins",
+                "distance": 3000
+            });
+        
+
+    });
+
+</script>
+
+    <div id="SearchAutocompleteHolder"></div>
+    <script type="text/javascript">
+    function trackGAEvent(category, action, label, value) {
+	_gaq = _gaq || []
+
+
+    	// Event
+	_gaq.push(['_trackEvent', category, action, label, value]);
+
+	// Virtual Page
+        virtual_page = '_event_';
+	virtual_page += "/" + category;
+
+	if(!action) action = '_';
+        virtual_page+="/" + action;
+	if(label) virtual_page+= "/" + label;
+
+	_gaq.push(['_trackPageview', virtual_page]);
+
+        
+    }
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12967896-1']);
+    _gaq.push(['_setCustomVar', 1, 'is_logged_in', 'logged out', 2]);
+    _gaq.push(['_setCustomVar', 2, 'page_name', 'domain', 1]);
+    
+    
+        _gaq.push(['_trackPageview']);
+    
+
+    (function() {
+      var ga = document.createElement('script'); ga.type='text/javascript'; ga.async=true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+
+</script>
+
+
+    
+</html>
